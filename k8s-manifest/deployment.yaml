@@ -9,14 +9,14 @@ spec:
       - ports:
         - containerPort: 8080
         name: mycontainer
-        image: docker push /:v
+        image: /:v
       serviceAccountName: jenkins
     metadata:
       labels:
         name: mydeploy1
       name: mypod1
+kind: Deployment
+apiVersion: apps/v1
 metadata:
   name: mydeploy
-apiVersion: apps/v1
-kind: Deployment
 

@@ -1,22 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mydeploy
 spec:
+  replicas: 1
   selector:
     matchLabels:
       name: mydeploy1
-  replicas: 1
   template:
-    spec:
-      containers:
-      - ports:
-        - containerPort: 8080
-        name: mycontainer
-        image: /:v
-      serviceAccountName: jenkins
     metadata:
+      name: mypod1
       labels:
         name: mydeploy1
-      name: mypod1
-metadata:
-  name: mydeploy
-apiVersion: apps/v1
-kind: Deployment
+    spec:
+      serviceAccountName: jenkins  # Use the Jenkins ServiceAccount
+      containers:
+      - name: mycontainer
+        image: badrivarun/sample  # replace with your Docker-image pushed on Dockerhub
+        ports:
+        - containerPort: 8080
 
+ 

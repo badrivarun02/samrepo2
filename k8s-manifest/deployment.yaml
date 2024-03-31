@@ -18,4 +18,4 @@ spec:
       - name: mycontainer
         image: badrivarun/sample2:v19  # replace with your Docker-image pushed on Dockerhub
         ports:
-        - containerPort: 8080
+        - containerPort: 8080
